@@ -83,7 +83,7 @@ for (const entry of manifest) {
     const buf = Buffer.from(await (await fetch(mp3)).arrayBuffer());
     const file = `${entry.id}.mp3`;
     fs.writeFileSync(path.join(SOUNDS_DIR, file), buf);
-    entry.file = `/sounds/${file}`;
+    entry.file = `sounds/${file}`;
     entry.source = { title: hit.name, author: hit.username, url: hit.url, license: 'CC0 1.0', fetched: true, freesoundId: hit.id };
     console.log(`fetched ${entry.id}: "${hit.name}" by ${hit.username} (${hit.duration.toFixed(1)}s)`);
     await new Promise((r) => setTimeout(r, 400)); // be polite to the API

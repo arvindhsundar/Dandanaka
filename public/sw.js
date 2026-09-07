@@ -1,7 +1,9 @@
-const VERSION = 'v1';
+const VERSION = 'v2';
 const SHELL = `shell-${VERSION}`;
 const SOUNDS = 'sounds';
-const PRECACHE = ['/', '/app.js', '/audio.js', '/sync.js', '/styles.css', '/icon.svg', '/manifest.webmanifest', '/sounds/manifest.json'];
+// The app may be mounted under a path (e.g. /soundboard/); the registration scope tells us where.
+const BASE = new URL(self.registration.scope).pathname;
+const PRECACHE = ['', 'app.js', 'audio.js', 'sync.js', 'styles.css', 'icon.svg', 'manifest.webmanifest', 'sounds/manifest.json'].map((p) => BASE + p);
 
 self.addEventListener('install', (e) => {
   e.waitUntil(caches.open(SHELL).then((c) => c.addAll(PRECACHE)).then(() => self.skipWaiting()));
@@ -13,11 +15,12 @@ self.addEventListener('activate', (e) => {
 
 self.addEventListener('fetch', (e) => {
   const url = new URL(e.request.url);
-  if (e.request.method !== 'GET' || url.origin !== location.origin) return;
-  if (url.pathname.startsWith('/api/') || url.pathname === '/ws' || url.pathname === '/healthz') return;
+  if (e.request.method !== 'GET' || url.origin !== location.origin || !url.pathname.startsWith(BASE)) return;
+  const rel = url.pathname.slice(BASE.length);
+  if (rel.startsWith('api/') || rel === 'ws' || rel === 'healthz') return;
 
   // Sounds are immutable: cache first, forever.
-  if (url.pathname.startsWith('/sounds/') && !url.pathname.endsWith('manifest.json')) {
+  if (rel.startsWith('sounds/') && !rel.endsWith('manifest.json')) {
     e.respondWith(caches.open(SOUNDS).then(async (c) => {
       const hit = await c.match(e.request);
       if (hit) return hit;
@@ -29,7 +32,7 @@ self.addEventListener('fetch', (e) => {
   }
 
   // App shell: network first so updates land, cache as offline fallback.
-  const shellPath = url.pathname.startsWith('/r/') ? '/' : url.pathname;
+  const shellPath = rel.startsWith('r/') ? BASE : url.pathname;
   e.respondWith((async () => {
     try {
       const res = await fetch(e.request);

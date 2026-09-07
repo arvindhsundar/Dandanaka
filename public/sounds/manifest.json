@@ -4,7 +4,7 @@
     "name": "Rain",
     "category": "ambience",
     "kind": "loop",
-    "file": "/sounds/rain.mp3",
+    "file": "sounds/rain.mp3",
     "gain": 1.0,
     "defaultVolume": 0.7,
     "source": {
@@ -19,7 +19,7 @@
     "name": "Storm",
     "category": "ambience",
     "kind": "loop",
-    "file": "/sounds/storm.mp3",
+    "file": "sounds/storm.mp3",
     "gain": 1.0,
     "defaultVolume": 0.7,
     "source": {
@@ -34,7 +34,7 @@
     "name": "Wind",
     "category": "ambience",
     "kind": "loop",
-    "file": "/sounds/wind.mp3",
+    "file": "sounds/wind.mp3",
     "gain": 1.0,
     "defaultVolume": 0.6,
     "source": {
@@ -49,7 +49,7 @@
     "name": "Forest at night",
     "category": "ambience",
     "kind": "loop",
-    "file": "/sounds/forest-night.mp3",
+    "file": "sounds/forest-night.mp3",
     "gain": 1.0,
     "defaultVolume": 0.8,
     "source": {
@@ -64,7 +64,7 @@
     "name": "Campfire",
     "category": "ambience",
     "kind": "loop",
-    "file": "/sounds/campfire.mp3",
+    "file": "sounds/campfire.mp3",
     "gain": 1.0,
     "defaultVolume": 0.7,
     "source": {
@@ -79,7 +79,7 @@
     "name": "Dungeon",
     "category": "ambience",
     "kind": "loop",
-    "file": "/sounds/dungeon.mp3",
+    "file": "sounds/dungeon.mp3",
     "gain": 1.0,
     "defaultVolume": 0.8,
     "source": {
@@ -94,7 +94,7 @@
     "name": "Cave drone",
     "category": "ambience",
     "kind": "loop",
-    "file": "/sounds/cave-drone.mp3",
+    "file": "sounds/cave-drone.mp3",
     "gain": 1.0,
     "defaultVolume": 0.7,
     "source": {
@@ -109,7 +109,7 @@
     "name": "Ocean waves",
     "category": "ambience",
     "kind": "loop",
-    "file": "/sounds/ocean.mp3",
+    "file": "sounds/ocean.mp3",
     "gain": 1.0,
     "defaultVolume": 0.7,
     "source": {
@@ -124,7 +124,7 @@
     "name": "Tavern",
     "category": "ambience",
     "kind": "loop",
-    "file": "/sounds/tavern.mp3",
+    "file": "sounds/tavern.mp3",
     "gain": 1.0,
     "defaultVolume": 0.8,
     "source": {
@@ -139,7 +139,7 @@
     "name": "Heartbeat",
     "category": "ambience",
     "kind": "loop",
-    "file": "/sounds/heartbeat.mp3",
+    "file": "sounds/heartbeat.mp3",
     "gain": 1.0,
     "defaultVolume": 0.8,
     "source": {
@@ -154,7 +154,7 @@
     "name": "Sword clash",
     "category": "combat",
     "kind": "shot",
-    "file": "/sounds/sword-clash.mp3",
+    "file": "sounds/sword-clash.mp3",
     "gain": 1.0,
     "defaultVolume": 1,
     "source": {
@@ -169,7 +169,7 @@
     "name": "Heavy hit",
     "category": "combat",
     "kind": "shot",
-    "file": "/sounds/heavy-hit.mp3",
+    "file": "sounds/heavy-hit.mp3",
     "gain": 1.0,
     "defaultVolume": 1,
     "source": {
@@ -184,7 +184,7 @@
     "name": "Shield block",
     "category": "combat",
     "kind": "shot",
-    "file": "/sounds/shield-block.mp3",
+    "file": "sounds/shield-block.mp3",
     "gain": 1.0,
     "defaultVolume": 1,
     "source": {
@@ -199,7 +199,7 @@
     "name": "Arrow",
     "category": "combat",
     "kind": "shot",
-    "file": "/sounds/arrow.mp3",
+    "file": "sounds/arrow.mp3",
     "gain": 1.0,
     "defaultVolume": 1,
     "source": {
@@ -214,7 +214,7 @@
     "name": "Spell cast",
     "category": "combat",
     "kind": "shot",
-    "file": "/sounds/spell-cast.mp3",
+    "file": "sounds/spell-cast.mp3",
     "gain": 1.0,
     "defaultVolume": 1,
     "source": {
@@ -229,7 +229,7 @@
     "name": "Explosion",
     "category": "combat",
     "kind": "shot",
-    "file": "/sounds/explosion.mp3",
+    "file": "sounds/explosion.mp3",
     "gain": 1.0,
     "defaultVolume": 1,
     "source": {
@@ -244,7 +244,7 @@
     "name": "Thunder",
     "category": "stingers",
     "kind": "shot",
-    "file": "/sounds/thunder.mp3",
+    "file": "sounds/thunder.mp3",
     "gain": 1.0,
     "defaultVolume": 1,
     "source": {
@@ -259,7 +259,7 @@
     "name": "Door creak",
     "category": "stingers",
     "kind": "shot",
-    "file": "/sounds/door-creak.mp3",
+    "file": "sounds/door-creak.mp3",
     "gain": 1.0,
     "defaultVolume": 1,
     "source": {
@@ -274,7 +274,7 @@
     "name": "Door slam",
     "category": "stingers",
     "kind": "shot",
-    "file": "/sounds/door-slam.mp3",
+    "file": "sounds/door-slam.mp3",
     "gain": 1.0,
     "defaultVolume": 1,
     "source": {
@@ -289,7 +289,7 @@
     "name": "Chest open",
     "category": "stingers",
     "kind": "shot",
-    "file": "/sounds/chest-open.mp3",
+    "file": "sounds/chest-open.mp3",
     "gain": 1.0,
     "defaultVolume": 1,
     "source": {
@@ -304,7 +304,7 @@
     "name": "Coins",
     "category": "stingers",
     "kind": "shot",
-    "file": "/sounds/coins.mp3",
+    "file": "sounds/coins.mp3",
     "gain": 1.0,
     "defaultVolume": 1,
     "source": {
@@ -319,7 +319,7 @@
     "name": "Dice roll",
     "category": "stingers",
     "kind": "shot",
-    "file": "/sounds/dice-roll.mp3",
+    "file": "sounds/dice-roll.mp3",
     "gain": 1.0,
     "defaultVolume": 1,
     "source": {
@@ -334,7 +334,7 @@
     "name": "Footsteps",
     "category": "stingers",
     "kind": "shot",
-    "file": "/sounds/footsteps.mp3",
+    "file": "sounds/footsteps.mp3",
     "gain": 1.0,
     "defaultVolume": 1,
     "source": {
@@ -349,7 +349,7 @@
     "name": "Bell toll",
     "category": "stingers",
     "kind": "shot",
-    "file": "/sounds/bell-toll.mp3",
+    "file": "sounds/bell-toll.mp3",
     "gain": 1.0,
     "defaultVolume": 1,
     "source": {
@@ -364,7 +364,7 @@
     "name": "Dramatic sting",
     "category": "stingers",
     "kind": "shot",
-    "file": "/sounds/dramatic-sting.mp3",
+    "file": "sounds/dramatic-sting.mp3",
     "gain": 1.0,
     "defaultVolume": 1,
     "source": {
@@ -379,7 +379,7 @@
     "name": "Victory fanfare",
     "category": "stingers",
     "kind": "shot",
-    "file": "/sounds/victory-fanfare.mp3",
+    "file": "sounds/victory-fanfare.mp3",
     "gain": 1.0,
     "defaultVolume": 1,
     "source": {
@@ -394,7 +394,7 @@
     "name": "Horn call",
     "category": "stingers",
     "kind": "shot",
-    "file": "/sounds/horn-call.mp3",
+    "file": "sounds/horn-call.mp3",
     "gain": 1.0,
     "defaultVolume": 1,
     "source": {
@@ -409,7 +409,7 @@
     "name": "Dragon roar",
     "category": "creatures",
     "kind": "shot",
-    "file": "/sounds/dragon-roar.mp3",
+    "file": "sounds/dragon-roar.mp3",
     "gain": 1.0,
     "defaultVolume": 1,
     "source": {
@@ -424,7 +424,7 @@
     "name": "Monster growl",
     "category": "creatures",
     "kind": "shot",
-    "file": "/sounds/monster-growl.mp3",
+    "file": "sounds/monster-growl.mp3",
     "gain": 1.0,
     "defaultVolume": 1,
     "source": {
@@ -439,7 +439,7 @@
     "name": "Wolf howl",
     "category": "creatures",
     "kind": "shot",
-    "file": "/sounds/wolf-howl.mp3",
+    "file": "sounds/wolf-howl.mp3",
     "gain": 1.0,
     "defaultVolume": 1,
     "source": {
@@ -454,7 +454,7 @@
     "name": "Owl",
     "category": "creatures",
     "kind": "shot",
-    "file": "/sounds/owl.mp3",
+    "file": "sounds/owl.mp3",
     "gain": 1.0,
     "defaultVolume": 1,
     "source": {
@@ -469,7 +469,7 @@
     "name": "Crow",
     "category": "creatures",
     "kind": "shot",
-    "file": "/sounds/crow.mp3",
+    "file": "sounds/crow.mp3",
     "gain": 1.0,
     "defaultVolume": 1,
     "source": {
@@ -484,7 +484,7 @@
     "name": "Bones rattle",
     "category": "creatures",
     "kind": "shot",
-    "file": "/sounds/bones-rattle.mp3",
+    "file": "sounds/bones-rattle.mp3",
     "gain": 1.0,
     "defaultVolume": 1,
     "source": {
@@ -499,7 +499,7 @@
     "name": "War drums",
     "category": "music",
     "kind": "loop",
-    "file": "/sounds/war-drums.mp3",
+    "file": "sounds/war-drums.mp3",
     "gain": 1.0,
     "defaultVolume": 0.8,
     "source": {
@@ -514,7 +514,7 @@
     "name": "Tension drone",
     "category": "music",
     "kind": "loop",
-    "file": "/sounds/tension-drone.mp3",
+    "file": "sounds/tension-drone.mp3",
     "gain": 1.0,
     "defaultVolume": 0.7,
     "source": {
@@ -529,7 +529,7 @@
     "name": "Mystery pad",
     "category": "music",
     "kind": "loop",
-    "file": "/sounds/mystery-pad.mp3",
+    "file": "sounds/mystery-pad.mp3",
     "gain": 1.0,
     "defaultVolume": 0.7,
     "source": {

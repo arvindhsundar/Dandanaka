@@ -11,6 +11,15 @@ const PORT = Number(process.env.PORT || 3000);
 const HOST = process.env.HOST || '0.0.0.0';
 const MAX_ROOMS = Number(process.env.MAX_ROOMS || 500);
 const MAX_CLIENTS_PER_ROOM = Number(process.env.MAX_CLIENTS_PER_ROOM || 50);
+// Mount point when the app lives under a path on a bigger site, e.g. BASE_PATH=/soundboard.
+// The prefix is stripped from incoming URLs (so it works whether or not the proxy rewrites
+// it away) and injected into index.html as <base href>, so every relative URL resolves.
+const BASE_PATH = `/${process.env.BASE_PATH || ''}/`.replace(/\/+/g, '/');
+function stripBase(p) {
+  if (BASE_PATH === '/') return p;
+  if (p === BASE_PATH.slice(0, -1)) return '/';
+  return p.startsWith(BASE_PATH) ? p.slice(BASE_PATH.length - 1) : p;
+}
 
 const MIME = {
   '.html': 'text/html; charset=utf-8', '.js': 'text/javascript; charset=utf-8', '.mjs': 'text/javascript; charset=utf-8',
@@ -74,9 +83,18 @@ function serveFile(req, res, filePath) {
   return true;
 }
 
+function serveIndex(req, res) {
+  let html;
+  try { html = fs.readFileSync(path.join(PUBLIC, 'index.html'), 'utf8'); } catch { res.writeHead(500); return res.end(); }
+  html = html.replace('<base href="/">', `<base href="${BASE_PATH}">`);
+  res.writeHead(200, { 'content-type': 'text/html; charset=utf-8', 'cache-control': 'no-cache', 'content-length': Buffer.byteLength(html) });
+  if (req.method === 'HEAD') return res.end();
+  res.end(html);
+}
+
 const server = http.createServer((req, res) => {
   const url = new URL(req.url, 'http://localhost');
-  const p = url.pathname;
+  const p = stripBase(url.pathname);
 
   if (p === '/healthz') return json(res, 200, { ok: true, rooms: store.size });
 
@@ -96,7 +114,7 @@ const server = http.createServer((req, res) => {
   if (req.method !== 'GET' && req.method !== 'HEAD') { res.writeHead(405); return res.end(); }
 
   // /r/<code> is the app shell; the client reads the code from the URL.
-  if (p === '/' || p.startsWith('/r/')) return serveFile(req, res, path.join(PUBLIC, 'index.html'));
+  if (p === '/' || p.startsWith('/r/')) return serveIndex(req, res);
 
   const safe = path.normalize(decodeURIComponent(p)).replace(/^(\.\.[/\\])+/, '');
   const filePath = path.join(PUBLIC, safe);
@@ -110,7 +128,7 @@ const wss = new WebSocketServer({ noServer: true, maxPayload: 4096 });
 
 server.on('upgrade', (req, socket, head) => {
   const url = new URL(req.url, 'http://localhost');
-  if (url.pathname !== '/ws') { socket.destroy(); return; }
+  if (stripBase(url.pathname) !== '/ws') { socket.destroy(); return; }
   const room = store.get(url.searchParams.get('room') || '');
   if (!room) { socket.write('HTTP/1.1 404 Not Found\r\n\r\n'); socket.destroy(); return; }
   if (room.clients.size >= MAX_CLIENTS_PER_ROOM) { socket.write('HTTP/1.1 503 Room Full\r\n\r\n'); socket.destroy(); return; }
@@ -153,7 +171,7 @@ setInterval(() => {
 }, 30_000).unref();
 
 server.listen(PORT, HOST, () => {
-  console.log(`dandanaka listening on http://${HOST}:${server.address().port}`);
+  console.log(`dandanaka listening on http://${HOST}:${server.address().port}${BASE_PATH}`);
 });
 
 for (const sig of ['SIGINT', 'SIGTERM']) {

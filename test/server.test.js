@@ -10,7 +10,7 @@ const open = (ws) => new Promise((ok, err) => { ws.once('open', ok); ws.once('er
 
 test.before(async () => {
   proc = spawn(process.execPath, ['server/index.js'], { env: { ...process.env, PORT: '0' }, stdio: ['ignore', 'pipe', 'inherit'] });
-  const port = await new Promise((ok) => proc.stdout.on('data', (d) => { const m = String(d).match(/:(\d+)\s*$/m); if (m) ok(m[1]); }));
+  const port = await new Promise((ok) => proc.stdout.on('data', (d) => { const m = String(d).match(/:(\d+)\S*\s*$/m); if (m) ok(m[1]); }));
   base = `http://127.0.0.1:${port}`;
 });
 test.after(() => proc.kill());
@@ -20,7 +20,7 @@ test('serves the app shell, sounds, and manifest', async () => {
   assert.match(html, /<div id="app">/);
   const man = await (await fetch(`${base}/sounds/manifest.json`)).json();
   assert.ok(man.length >= 30);
-  const head = await fetch(`${base}${man[0].file}`, { headers: { range: 'bytes=0-99' } });
+  const head = await fetch(`${base}/${man[0].file}`, { headers: { range: 'bytes=0-99' } });
   assert.equal(head.status, 206);
   assert.equal(head.headers.get('content-length'), '100');
   assert.equal((await fetch(`${base}/../package.json`)).status, 404);
@@ -72,4 +72,24 @@ test('room lifecycle over websocket', async () => {
 test('unknown room is refused at upgrade', async () => {
   const ws = new WebSocket(`${base.replace('http', 'ws')}/ws?room=no-such-room`);
   await assert.rejects(open(ws), /HTTP 404/);
+});
+
+test('BASE_PATH mounts the whole app under a prefix', async () => {
+  const p2 = spawn(process.execPath, ['server/index.js'], { env: { ...process.env, PORT: '0', BASE_PATH: '/soundboard' }, stdio: ['ignore', 'pipe', 'inherit'] });
+  try {
+    const port = await new Promise((ok) => p2.stdout.on('data', (d) => { const m = String(d).match(/:(\d+)\S*\s*$/m); if (m) ok(m[1]); }));
+    const b = `http://127.0.0.1:${port}`;
+    const html = await (await fetch(`${b}/soundboard/r/fox-moon-oak`)).text();
+    assert.match(html, /<base href="\/soundboard\/">/);
+    assert.match(await (await fetch(`${b}/soundboard`)).text(), /<base href="\/soundboard\/">/);
+    // also works when the proxy has already stripped the prefix
+    assert.match(await (await fetch(`${b}/r/fox-moon-oak`)).text(), /<base href="\/soundboard\/">/);
+    assert.equal((await fetch(`${b}/soundboard/sounds/manifest.json`)).status, 200);
+    assert.equal((await fetch(`${b}/soundboard/styles.css`)).status, 200);
+    const { code, gmToken } = await (await fetch(`${b}/soundboard/api/rooms`, { method: 'POST' })).json();
+    const gm = new WebSocket(`ws://127.0.0.1:${port}/soundboard/ws?room=${code}&token=${gmToken}`);
+    const st = once(gm, 'state'); await open(gm);
+    assert.equal((await st).role, 'gm');
+    gm.close();
+  } finally { p2.kill(); }
 });

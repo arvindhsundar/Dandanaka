@@ -417,7 +417,7 @@ def main():
         path = os.path.join(OUT, f'{sid}.{ext}')
         (write_wav if use_wav else write_mp3)(path, x)
         manifest.append({
-            'id': sid, 'name': name, 'category': cat, 'kind': kind, 'file': f'/sounds/{sid}.{ext}',
+            'id': sid, 'name': name, 'category': cat, 'kind': kind, 'file': f'sounds/{sid}.{ext}',
             'gain': 1.0, 'defaultVolume': vol,
             'source': {'title': f'{name} (synthesized)', 'author': 'Dandanaka generator', 'license': 'CC0 1.0', 'url': 'https://creativecommons.org/publicdomain/zero/1.0/'},
         })

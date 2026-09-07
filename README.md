@@ -29,9 +29,11 @@ fly deploy
 
 **Railway / Render / any Docker host:** build the included `Dockerfile`, expose port 3000. Set `PORT` if the host wants a different one.
 
+**puttheplayerfirst.com VPS (Dokploy + nginx):** see `deploy/VPS.md`. The app mounts at `/soundboard/` via `BASE_PATH`, and `deploy/nginx-soundboard.conf` is the proxy block for the site's nginx.
+
 **Your own VPS:** `npm ci --omit=dev && PORT=3000 node server/index.js` behind Caddy or nginx with WebSocket proxying enabled. HTTPS is required for the "add to home screen" install and for the screen wake lock; both Fly and Railway give you that for free.
 
-Environment variables: `PORT` (3000), `HOST` (0.0.0.0), `MAX_ROOMS` (500), `MAX_CLIENTS_PER_ROOM` (50).
+Environment variables: `PORT` (3000), `HOST` (0.0.0.0), `BASE_PATH` (empty; set `/soundboard` to mount under a path), `MAX_ROOMS` (500), `MAX_CLIENTS_PER_ROOM` (50).
 
 ## Sounds
 

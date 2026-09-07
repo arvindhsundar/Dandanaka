@@ -1,0 +1,16 @@
+# Dokploy "Compose" deployment on the puttheplayerfirst.com VPS.
+# nginx (the static site's container) proxies /soundboard/ to this container by name
+# over the shared dokploy-network, exactly like the PhotoQuest prompt proxy.
+services:
+  dandanaka:
+    build: .
+    container_name: dandanaka
+    restart: unless-stopped
+    environment:
+      - PORT=3000
+      - BASE_PATH=/soundboard
+    networks:
+      - dokploy-network
+networks:
+  dokploy-network:
+    external: true

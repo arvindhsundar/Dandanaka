@@ -1,5 +1,8 @@
-import { AudioEngine } from '/audio.js';
-import { ClockSync } from '/sync.js';
+import { AudioEngine } from './audio.js';
+import { ClockSync } from './sync.js';
+
+// The server injects <base href> so the app can be mounted at / or under a prefix like /soundboard/.
+const BASE = new URL(document.baseURI).pathname;
 
 const $ = (s, r = document) => r.querySelector(s);
 const app = $('#app');
@@ -28,7 +31,8 @@ let ws = null, reconnectDelay = 500, pingTimer = null, reconnectTimer = null, wa
 
 // ---------- routing ----------
 function route() {
-  const m = location.pathname.match(/^\/r\/([a-z0-9-]+)/i);
+  const rel = location.pathname.startsWith(BASE) ? location.pathname.slice(BASE.length - 1) : location.pathname;
+  const m = rel.match(/^\/r\/([a-z0-9-]+)/i);
   const q = new URLSearchParams(location.search);
   if (q.get('solo') === '1') { S.mode = 'solo'; return renderGate(); }
   if (!m) return renderHome();
@@ -45,23 +49,24 @@ function renderHome() {
       <p class="sub muted">A soundboard for the table. Start a session on this device, share the link, and every player hears the same thing at the same time.</p>
       <button class="primary" id="start">Start a session</button>
       <div class="row"><input type="text" id="code" placeholder="or enter a room code: fox-moon-oak" autocapitalize="none" autocorrect="off"><button id="join">Join</button></div>
-      <p class="muted"><a href="/?solo=1">Solo board</a> (no room, this device only)</p>
+      <p class="muted"><a href="${BASE}?solo=1">Solo board</a> (no room, this device only)</p>
       <p id="err" class="err"></p>
+      <p class="muted small">A <a href="https://puttheplayerfirst.com/" rel="noopener">Put The Player First</a> tool for game masters. Free, no account.</p>
     </div>`;
   $('#start').onclick = async () => {
     $('#start').disabled = true; $('#err').textContent = '';
     try {
-      const r = await fetch('/api/rooms', { method: 'POST' });
+      const r = await fetch(`${BASE}api/rooms`, { method: 'POST' });
       const j = await r.json();
       if (!r.ok) throw new Error(j.error || `HTTP ${r.status}`);
       localStorage.setItem(`gm:${j.code}`, j.gmToken);
-      location.href = `/r/${j.code}`;
+      location.href = `${BASE}r/${j.code}`;
     } catch (e) {
       $('#err').textContent = `Couldn't create a room (${e.message}). You can still use the solo board.`;
       $('#start').disabled = false;
     }
   };
-  const go = () => { const c = $('#code').value.trim().toLowerCase().replace(/\s+/g, '-'); if (c) location.href = `/r/${c}`; };
+  const go = () => { const c = $('#code').value.trim().toLowerCase().replace(/\s+/g, '-'); if (c) location.href = `${BASE}r/${c}`; };
   $('#join').onclick = go;
   $('#code').addEventListener('keydown', (e) => { if (e.key === 'Enter') go(); });
 }
@@ -84,7 +89,7 @@ function renderGate() {
     if (!ok) $('#msg').textContent = 'Audio is still locked. Tap again.';
     $('#prog').hidden = false;
     try {
-      S.manifest = await (await fetch('/sounds/manifest.json')).json();
+      S.manifest = await (await fetch(`${BASE}sounds/manifest.json`)).json();
     } catch { $('#msg').textContent = 'Could not load the sound list. Check your connection and reload.'; return; }
     const failures = await engine.load(S.manifest, (d, t) => { $('#prog > div').style.width = `${(d / t) * 100}%`; $('#msg').textContent = `Loading sounds ${d}/${t}`; });
     for (const f of failures) S.missing.add(f.id);
@@ -98,7 +103,7 @@ function renderGate() {
 function wsUrl() {
   const u = new URL(location.href);
   u.protocol = u.protocol === 'https:' ? 'wss:' : 'ws:';
-  u.pathname = '/ws'; u.search = '';
+  u.pathname = `${BASE}ws`; u.search = '';
   u.searchParams.set('room', S.code);
   if (S.gmToken) u.searchParams.set('token', S.gmToken);
   return u.toString();
@@ -250,7 +255,7 @@ function flash(id) {
 function updateMaster() { const m = $('#master'); if (m && document.activeElement !== m) m.value = S.roomMaster; }
 
 async function shareLink() {
-  const url = `${location.origin}/r/${S.code}`;
+  const url = `${location.origin}${BASE}r/${S.code}`;
   if (navigator.share) { try { await navigator.share({ title: 'Join my table', text: `Room code ${S.code}`, url }); return; } catch { /* cancelled */ } }
   try { await navigator.clipboard.writeText(url); toast('Link copied'); } catch { prompt('Share this link', url); }
 }
@@ -319,7 +324,7 @@ document.addEventListener('visibilitychange', () => {
 });
 window.addEventListener('online', () => { if (S.mode !== 'solo' && (!ws || ws.readyState > 1)) connect(); });
 
-if ('serviceWorker' in navigator) navigator.serviceWorker.register('/sw.js').catch(() => {});
+if ('serviceWorker' in navigator) navigator.serviceWorker.register(`${BASE}sw.js`).catch(() => {});
 route();
 
 // Debug handle for automated tests and console poking. Harmless in production.
