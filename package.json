@@ -1,0 +1,19 @@
+{
+  "name": "dandanaka",
+  "version": "0.1.0",
+  "description": "Tabletop RPG soundboard: play a sound from any device, everyone in the room hears it.",
+  "type": "module",
+  "main": "server/index.js",
+  "scripts": {
+    "start": "node server/index.js",
+    "dev": "node --watch server/index.js",
+    "test": "node --test test/*.test.js",
+    "sounds:generate": "python3 scripts/generate_sounds.py",
+    "sounds:fetch": "node scripts/fetch-sounds.mjs"
+  },
+  "engines": { "node": ">=20" },
+  "license": "MIT",
+  "dependencies": {
+    "ws": "^8.18.0"
+  }
+}

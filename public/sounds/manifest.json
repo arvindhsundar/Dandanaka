@@ -1,0 +1,542 @@
+[
+  {
+    "id": "rain",
+    "name": "Rain",
+    "category": "ambience",
+    "kind": "loop",
+    "file": "/sounds/rain.mp3",
+    "gain": 1.0,
+    "defaultVolume": 0.7,
+    "source": {
+      "title": "Rain (synthesized)",
+      "author": "Dandanaka generator",
+      "license": "CC0 1.0",
+      "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+    }
+  },
+  {
+    "id": "storm",
+    "name": "Storm",
+    "category": "ambience",
+    "kind": "loop",
+    "file": "/sounds/storm.mp3",
+    "gain": 1.0,
+    "defaultVolume": 0.7,
+    "source": {
+      "title": "Storm (synthesized)",
+      "author": "Dandanaka generator",
+      "license": "CC0 1.0",
+      "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+    }
+  },
+  {
+    "id": "wind",
+    "name": "Wind",
+    "category": "ambience",
+    "kind": "loop",
+    "file": "/sounds/wind.mp3",
+    "gain": 1.0,
+    "defaultVolume": 0.6,
+    "source": {
+      "title": "Wind (synthesized)",
+      "author": "Dandanaka generator",
+      "license": "CC0 1.0",
+      "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+    }
+  },
+  {
+    "id": "forest-night",
+    "name": "Forest at night",
+    "category": "ambience",
+    "kind": "loop",
+    "file": "/sounds/forest-night.mp3",
+    "gain": 1.0,
+    "defaultVolume": 0.8,
+    "source": {
+      "title": "Forest at night (synthesized)",
+      "author": "Dandanaka generator",
+      "license": "CC0 1.0",
+      "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+    }
+  },
+  {
+    "id": "campfire",
+    "name": "Campfire",
+    "category": "ambience",
+    "kind": "loop",
+    "file": "/sounds/campfire.mp3",
+    "gain": 1.0,
+    "defaultVolume": 0.7,
+    "source": {
+      "title": "Campfire (synthesized)",
+      "author": "Dandanaka generator",
+      "license": "CC0 1.0",
+      "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+    }
+  },
+  {
+    "id": "dungeon",
+    "name": "Dungeon",
+    "category": "ambience",
+    "kind": "loop",
+    "file": "/sounds/dungeon.mp3",
+    "gain": 1.0,
+    "defaultVolume": 0.8,
+    "source": {
+      "title": "Dungeon (synthesized)",
+      "author": "Dandanaka generator",
+      "license": "CC0 1.0",
+      "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+    }
+  },
+  {
+    "id": "cave-drone",
+    "name": "Cave drone",
+    "category": "ambience",
+    "kind": "loop",
+    "file": "/sounds/cave-drone.mp3",
+    "gain": 1.0,
+    "defaultVolume": 0.7,
+    "source": {
+      "title": "Cave drone (synthesized)",
+      "author": "Dandanaka generator",
+      "license": "CC0 1.0",
+      "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+    }
+  },
+  {
+    "id": "ocean",
+    "name": "Ocean waves",
+    "category": "ambience",
+    "kind": "loop",
+    "file": "/sounds/ocean.mp3",
+    "gain": 1.0,
+    "defaultVolume": 0.7,
+    "source": {
+      "title": "Ocean waves (synthesized)",
+      "author": "Dandanaka generator",
+      "license": "CC0 1.0",
+      "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+    }
+  },
+  {
+    "id": "tavern",
+    "name": "Tavern",
+    "category": "ambience",
+    "kind": "loop",
+    "file": "/sounds/tavern.mp3",
+    "gain": 1.0,
+    "defaultVolume": 0.8,
+    "source": {
+      "title": "Tavern (synthesized)",
+      "author": "Dandanaka generator",
+      "license": "CC0 1.0",
+      "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+    }
+  },
+  {
+    "id": "heartbeat",
+    "name": "Heartbeat",
+    "category": "ambience",
+    "kind": "loop",
+    "file": "/sounds/heartbeat.mp3",
+    "gain": 1.0,
+    "defaultVolume": 0.8,
+    "source": {
+      "title": "Heartbeat (synthesized)",
+      "author": "Dandanaka generator",
+      "license": "CC0 1.0",
+      "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+    }
+  },
+  {
+    "id": "sword-clash",
+    "name": "Sword clash",
+    "category": "combat",
+    "kind": "shot",
+    "file": "/sounds/sword-clash.mp3",
+    "gain": 1.0,
+    "defaultVolume": 1,
+    "source": {
+      "title": "Sword clash (synthesized)",
+      "author": "Dandanaka generator",
+      "license": "CC0 1.0",
+      "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+    }
+  },
+  {
+    "id": "heavy-hit",
+    "name": "Heavy hit",
+    "category": "combat",
+    "kind": "shot",
+    "file": "/sounds/heavy-hit.mp3",
+    "gain": 1.0,
+    "defaultVolume": 1,
+    "source": {
+      "title": "Heavy hit (synthesized)",
+      "author": "Dandanaka generator",
+      "license": "CC0 1.0",
+      "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+    }
+  },
+  {
+    "id": "shield-block",
+    "name": "Shield block",
+    "category": "combat",
+    "kind": "shot",
+    "file": "/sounds/shield-block.mp3",
+    "gain": 1.0,
+    "defaultVolume": 1,
+    "source": {
+      "title": "Shield block (synthesized)",
+      "author": "Dandanaka generator",
+      "license": "CC0 1.0",
+      "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+    }
+  },
+  {
+    "id": "arrow",
+    "name": "Arrow",
+    "category": "combat",
+    "kind": "shot",
+    "file": "/sounds/arrow.mp3",
+    "gain": 1.0,
+    "defaultVolume": 1,
+    "source": {
+      "title": "Arrow (synthesized)",
+      "author": "Dandanaka generator",
+      "license": "CC0 1.0",
+      "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+    }
+  },
+  {
+    "id": "spell-cast",
+    "name": "Spell cast",
+    "category": "combat",
+    "kind": "shot",
+    "file": "/sounds/spell-cast.mp3",
+    "gain": 1.0,
+    "defaultVolume": 1,
+    "source": {
+      "title": "Spell cast (synthesized)",
+      "author": "Dandanaka generator",
+      "license": "CC0 1.0",
+      "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+    }
+  },
+  {
+    "id": "explosion",
+    "name": "Explosion",
+    "category": "combat",
+    "kind": "shot",
+    "file": "/sounds/explosion.mp3",
+    "gain": 1.0,
+    "defaultVolume": 1,
+    "source": {
+      "title": "Explosion (synthesized)",
+      "author": "Dandanaka generator",
+      "license": "CC0 1.0",
+      "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+    }
+  },
+  {
+    "id": "thunder",
+    "name": "Thunder",
+    "category": "stingers",
+    "kind": "shot",
+    "file": "/sounds/thunder.mp3",
+    "gain": 1.0,
+    "defaultVolume": 1,
+    "source": {
+      "title": "Thunder (synthesized)",
+      "author": "Dandanaka generator",
+      "license": "CC0 1.0",
+      "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+    }
+  },
+  {
+    "id": "door-creak",
+    "name": "Door creak",
+    "category": "stingers",
+    "kind": "shot",
+    "file": "/sounds/door-creak.mp3",
+    "gain": 1.0,
+    "defaultVolume": 1,
+    "source": {
+      "title": "Door creak (synthesized)",
+      "author": "Dandanaka generator",
+      "license": "CC0 1.0",
+      "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+    }
+  },
+  {
+    "id": "door-slam",
+    "name": "Door slam",
+    "category": "stingers",
+    "kind": "shot",
+    "file": "/sounds/door-slam.mp3",
+    "gain": 1.0,
+    "defaultVolume": 1,
+    "source": {
+      "title": "Door slam (synthesized)",
+      "author": "Dandanaka generator",
+      "license": "CC0 1.0",
+      "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+    }
+  },
+  {
+    "id": "chest-open",
+    "name": "Chest open",
+    "category": "stingers",
+    "kind": "shot",
+    "file": "/sounds/chest-open.mp3",
+    "gain": 1.0,
+    "defaultVolume": 1,
+    "source": {
+      "title": "Chest open (synthesized)",
+      "author": "Dandanaka generator",
+      "license": "CC0 1.0",
+      "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+    }
+  },
+  {
+    "id": "coins",
+    "name": "Coins",
+    "category": "stingers",
+    "kind": "shot",
+    "file": "/sounds/coins.mp3",
+    "gain": 1.0,
+    "defaultVolume": 1,
+    "source": {
+      "title": "Coins (synthesized)",
+      "author": "Dandanaka generator",
+      "license": "CC0 1.0",
+      "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+    }
+  },
+  {
+    "id": "dice-roll",
+    "name": "Dice roll",
+    "category": "stingers",
+    "kind": "shot",
+    "file": "/sounds/dice-roll.mp3",
+    "gain": 1.0,
+    "defaultVolume": 1,
+    "source": {
+      "title": "Dice roll (synthesized)",
+      "author": "Dandanaka generator",
+      "license": "CC0 1.0",
+      "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+    }
+  },
+  {
+    "id": "footsteps",
+    "name": "Footsteps",
+    "category": "stingers",
+    "kind": "shot",
+    "file": "/sounds/footsteps.mp3",
+    "gain": 1.0,
+    "defaultVolume": 1,
+    "source": {
+      "title": "Footsteps (synthesized)",
+      "author": "Dandanaka generator",
+      "license": "CC0 1.0",
+      "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+    }
+  },
+  {
+    "id": "bell-toll",
+    "name": "Bell toll",
+    "category": "stingers",
+    "kind": "shot",
+    "file": "/sounds/bell-toll.mp3",
+    "gain": 1.0,
+    "defaultVolume": 1,
+    "source": {
+      "title": "Bell toll (synthesized)",
+      "author": "Dandanaka generator",
+      "license": "CC0 1.0",
+      "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+    }
+  },
+  {
+    "id": "dramatic-sting",
+    "name": "Dramatic sting",
+    "category": "stingers",
+    "kind": "shot",
+    "file": "/sounds/dramatic-sting.mp3",
+    "gain": 1.0,
+    "defaultVolume": 1,
+    "source": {
+      "title": "Dramatic sting (synthesized)",
+      "author": "Dandanaka generator",
+      "license": "CC0 1.0",
+      "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+    }
+  },
+  {
+    "id": "victory-fanfare",
+    "name": "Victory fanfare",
+    "category": "stingers",
+    "kind": "shot",
+    "file": "/sounds/victory-fanfare.mp3",
+    "gain": 1.0,
+    "defaultVolume": 1,
+    "source": {
+      "title": "Victory fanfare (synthesized)",
+      "author": "Dandanaka generator",
+      "license": "CC0 1.0",
+      "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+    }
+  },
+  {
+    "id": "horn-call",
+    "name": "Horn call",
+    "category": "stingers",
+    "kind": "shot",
+    "file": "/sounds/horn-call.mp3",
+    "gain": 1.0,
+    "defaultVolume": 1,
+    "source": {
+      "title": "Horn call (synthesized)",
+      "author": "Dandanaka generator",
+      "license": "CC0 1.0",
+      "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+    }
+  },
+  {
+    "id": "dragon-roar",
+    "name": "Dragon roar",
+    "category": "creatures",
+    "kind": "shot",
+    "file": "/sounds/dragon-roar.mp3",
+    "gain": 1.0,
+    "defaultVolume": 1,
+    "source": {
+      "title": "Dragon roar (synthesized)",
+      "author": "Dandanaka generator",
+      "license": "CC0 1.0",
+      "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+    }
+  },
+  {
+    "id": "monster-growl",
+    "name": "Monster growl",
+    "category": "creatures",
+    "kind": "shot",
+    "file": "/sounds/monster-growl.mp3",
+    "gain": 1.0,
+    "defaultVolume": 1,
+    "source": {
+      "title": "Monster growl (synthesized)",
+      "author": "Dandanaka generator",
+      "license": "CC0 1.0",
+      "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+    }
+  },
+  {
+    "id": "wolf-howl",
+    "name": "Wolf howl",
+    "category": "creatures",
+    "kind": "shot",
+    "file": "/sounds/wolf-howl.mp3",
+    "gain": 1.0,
+    "defaultVolume": 1,
+    "source": {
+      "title": "Wolf howl (synthesized)",
+      "author": "Dandanaka generator",
+      "license": "CC0 1.0",
+      "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+    }
+  },
+  {
+    "id": "owl",
+    "name": "Owl",
+    "category": "creatures",
+    "kind": "shot",
+    "file": "/sounds/owl.mp3",
+    "gain": 1.0,
+    "defaultVolume": 1,
+    "source": {
+      "title": "Owl (synthesized)",
+      "author": "Dandanaka generator",
+      "license": "CC0 1.0",
+      "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+    }
+  },
+  {
+    "id": "crow",
+    "name": "Crow",
+    "category": "creatures",
+    "kind": "shot",
+    "file": "/sounds/crow.mp3",
+    "gain": 1.0,
+    "defaultVolume": 1,
+    "source": {
+      "title": "Crow (synthesized)",
+      "author": "Dandanaka generator",
+      "license": "CC0 1.0",
+      "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+    }
+  },
+  {
+    "id": "bones-rattle",
+    "name": "Bones rattle",
+    "category": "creatures",
+    "kind": "shot",
+    "file": "/sounds/bones-rattle.mp3",
+    "gain": 1.0,
+    "defaultVolume": 1,
+    "source": {
+      "title": "Bones rattle (synthesized)",
+      "author": "Dandanaka generator",
+      "license": "CC0 1.0",
+      "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+    }
+  },
+  {
+    "id": "war-drums",
+    "name": "War drums",
+    "category": "music",
+    "kind": "loop",
+    "file": "/sounds/war-drums.mp3",
+    "gain": 1.0,
+    "defaultVolume": 0.8,
+    "source": {
+      "title": "War drums (synthesized)",
+      "author": "Dandanaka generator",
+      "license": "CC0 1.0",
+      "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+    }
+  },
+  {
+    "id": "tension-drone",
+    "name": "Tension drone",
+    "category": "music",
+    "kind": "loop",
+    "file": "/sounds/tension-drone.mp3",
+    "gain": 1.0,
+    "defaultVolume": 0.7,
+    "source": {
+      "title": "Tension drone (synthesized)",
+      "author": "Dandanaka generator",
+      "license": "CC0 1.0",
+      "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+    }
+  },
+  {
+    "id": "mystery-pad",
+    "name": "Mystery pad",
+    "category": "music",
+    "kind": "loop",
+    "file": "/sounds/mystery-pad.mp3",
+    "gain": 1.0,
+    "defaultVolume": 0.7,
+    "source": {
+      "title": "Mystery pad (synthesized)",
+      "author": "Dandanaka generator",
+      "license": "CC0 1.0",
+      "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+    }
+  }
+]
