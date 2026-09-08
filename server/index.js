@@ -83,6 +83,22 @@ function serveFile(req, res, filePath) {
   return true;
 }
 
+// Optional second sound directory outside the repo (e.g. a volume on the VPS holding
+// Pixabay files that shouldn't live in a public git repo). Its manifest.json is merged
+// over the bundled one, entries winning by id, and its files are served under /sounds/.
+const EXTRA_SOUNDS_DIR = process.env.EXTRA_SOUNDS_DIR ? path.resolve(process.env.EXTRA_SOUNDS_DIR) : null;
+function readManifest(dir) {
+  try { return JSON.parse(fs.readFileSync(path.join(dir, 'manifest.json'), 'utf8')); } catch { return []; }
+}
+function serveManifest(req, res) {
+  const merged = new Map(readManifest(path.join(PUBLIC, 'sounds')).map((e) => [e.id, e]));
+  if (EXTRA_SOUNDS_DIR) for (const e of readManifest(EXTRA_SOUNDS_DIR)) merged.set(e.id, e);
+  const body = JSON.stringify([...merged.values()]);
+  res.writeHead(200, { 'content-type': 'application/json; charset=utf-8', 'cache-control': 'no-cache', 'content-length': Buffer.byteLength(body) });
+  if (req.method === 'HEAD') return res.end();
+  res.end(body);
+}
+
 function serveIndex(req, res) {
   let html;
   try { html = fs.readFileSync(path.join(PUBLIC, 'index.html'), 'utf8'); } catch { res.writeHead(500); return res.end(); }
@@ -116,10 +132,16 @@ const server = http.createServer((req, res) => {
   // /r/<code> is the app shell; the client reads the code from the URL.
   if (p === '/' || p.startsWith('/r/')) return serveIndex(req, res);
 
+  if (p === '/sounds/manifest.json') return serveManifest(req, res);
+
   const safe = path.normalize(decodeURIComponent(p)).replace(/^(\.\.[/\\])+/, '');
   const filePath = path.join(PUBLIC, safe);
   if (!filePath.startsWith(PUBLIC)) { res.writeHead(403); return res.end(); }
   if (serveFile(req, res, filePath)) return;
+  if (EXTRA_SOUNDS_DIR && safe.startsWith(`${path.sep}sounds${path.sep}`)) {
+    const extra = path.join(EXTRA_SOUNDS_DIR, safe.slice(`${path.sep}sounds${path.sep}`.length));
+    if (extra.startsWith(EXTRA_SOUNDS_DIR) && serveFile(req, res, extra)) return;
+  }
   res.writeHead(404, { 'content-type': 'text/plain' });
   res.end('not found');
 });

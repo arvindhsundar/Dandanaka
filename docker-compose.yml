@@ -9,6 +9,11 @@ services:
     environment:
       - PORT=3000
       - BASE_PATH=/soundboard
+      # Sounds imported outside the repo (e.g. Pixabay). Create the dir on the box and
+      # run scripts/import-sounds.mjs with --dest pointing at it; empty dir is fine.
+      - EXTRA_SOUNDS_DIR=/data/sounds
+    volumes:
+      - /srv/dandanaka/sounds:/data/sounds:ro
     networks:
       - dokploy-network
 networks:

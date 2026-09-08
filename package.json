@@ -9,7 +9,8 @@
     "dev": "node --watch server/index.js",
     "test": "node --test test/*.test.js",
     "sounds:generate": "python3 scripts/generate_sounds.py",
-    "sounds:fetch": "node scripts/fetch-sounds.mjs"
+    "sounds:fetch": "node scripts/fetch-sounds.mjs",
+    "sounds:import": "node scripts/import-sounds.mjs"
   },
   "engines": { "node": ">=20" },
   "license": "MIT",

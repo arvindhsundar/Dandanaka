@@ -93,3 +93,27 @@ test('BASE_PATH mounts the whole app under a prefix', async () => {
     gm.close();
   } finally { p2.kill(); }
 });
+
+test('EXTRA_SOUNDS_DIR merges a second manifest and serves its files', async () => {
+  const { mkdtempSync, writeFileSync } = await import('node:fs');
+  const { tmpdir } = await import('node:os');
+  const { join } = await import('node:path');
+  const dir = mkdtempSync(join(tmpdir(), 'dd-extra-'));
+  writeFileSync(join(dir, 'manifest.json'), JSON.stringify([
+    { id: 'rain', name: 'Real rain', category: 'ambience', kind: 'loop', file: 'sounds/real-rain.mp3' },
+    { id: 'goblin', name: 'Goblin', category: 'creatures', kind: 'shot', file: 'sounds/goblin.mp3' },
+  ]));
+  writeFileSync(join(dir, 'goblin.mp3'), 'not really mp3');
+  const p2 = spawn(process.execPath, ['server/index.js'], { env: { ...process.env, PORT: '0', EXTRA_SOUNDS_DIR: dir }, stdio: ['ignore', 'pipe', 'inherit'] });
+  try {
+    const port = await new Promise((ok) => p2.stdout.on('data', (d) => { const m = String(d).match(/:(\d+)\S*\s*$/m); if (m) ok(m[1]); }));
+    const b = `http://127.0.0.1:${port}`;
+    const man = await (await fetch(`${b}/sounds/manifest.json`)).json();
+    assert.equal(man.find((e) => e.id === 'rain').name, 'Real rain', 'extra entry overrides bundled by id');
+    assert.ok(man.find((e) => e.id === 'goblin'));
+    assert.ok(man.find((e) => e.id === 'thunder'), 'bundled entries still present');
+    assert.equal((await fetch(`${b}/sounds/goblin.mp3`)).status, 200);
+    assert.equal((await fetch(`${b}/sounds/thunder.mp3`)).status, 200);
+    assert.equal((await fetch(`${b}/sounds/../package.json`)).status, 404);
+  } finally { p2.kill(); }
+});
