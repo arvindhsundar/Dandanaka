@@ -37,7 +37,9 @@ Environment variables: `PORT` (3000), `HOST` (0.0.0.0), `BASE_PATH` (empty; set 
 
 ## Sounds
 
-**Pixabay or your own files:** download into a folder, then `node scripts/import-sounds.mjs <folder>`. It names, categorises and installs them, replacing the synthesized pack. Full walkthrough, including a pick list and the licence angle: `deploy/PIXABAY.md`. To keep such files out of git, set `EXTRA_SOUNDS_DIR` to a directory outside the repo; its `manifest.json` is merged over the bundled one.
+**Pixabay or your own files:** `node scripts/harvest-pixabay.mjs` pulls a wishlist of sounds straight off Pixabay (it drives real Chrome, because pixabay.com blocks plain HTTP clients and has no audio API), or download into a folder yourself. Either way, `node scripts/import-sounds.mjs <folder>` finishes the job. It names, categorises and installs them, replacing the synthesized pack. Full walkthrough, including a pick list and the licence angle: `deploy/PIXABAY.md`. To keep such files out of git, set `EXTRA_SOUNDS_DIR` to a directory outside the repo; its `manifest.json` is merged over the bundled one.
+
+The live board serves 87 pads: the bundled synthesized 36 plus 51 Pixabay sounds that live outside git on the VPS (see `deploy/pixabay-2026-09-09.json` for the credits).
 
 The bundled pack (36 sounds, about 5 MB) is **synthesized** by `scripts/generate_sounds.py`, so it's CC0 by construction. Ambience like rain, wind, fire and ocean sounds fine. Creatures and fanfares are serviceable placeholders. Swap in real recordings when you want better:
 

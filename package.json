@@ -10,9 +10,12 @@
     "test": "node --test test/*.test.js",
     "sounds:generate": "python3 scripts/generate_sounds.py",
     "sounds:fetch": "node scripts/fetch-sounds.mjs",
-    "sounds:import": "node scripts/import-sounds.mjs"
+    "sounds:import": "node scripts/import-sounds.mjs",
+    "sounds:harvest": "node scripts/harvest-pixabay.mjs"
   },
-  "engines": { "node": ">=20" },
+  "engines": {
+    "node": ">=20"
+  },
   "license": "MIT",
   "dependencies": {
     "ws": "^8.18.0"

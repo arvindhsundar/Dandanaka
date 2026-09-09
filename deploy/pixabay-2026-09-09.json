@@ -1,0 +1,519 @@
+{
+  "harvested": "2026-09-09",
+  "provider": "Pixabay",
+  "license": "Pixabay Content License (https://pixabay.com/service/license-summary/)",
+  "note": "Audio files are NOT in this repo. Pixabay's licence forbids redistributing the files standalone, so they live on the VPS at /srv/dandanaka/sounds and are served through EXTRA_SOUNDS_DIR. This file is the credit ledger: every sound taken, its author and its Pixabay page.",
+  "count": 51,
+  "sounds": [
+    {
+      "id": "blacksmith",
+      "name": "Blacksmith forge",
+      "category": "ambience",
+      "kind": "loop",
+      "title": "Vintage Blacksmith Hammer",
+      "author": "faespencer",
+      "page": "https://pixabay.com/sound-effects/film-special-effects-vintage-blacksmith-hammer-484077/",
+      "license": "Pixabay Content License"
+    },
+    {
+      "id": "blizzard",
+      "name": "Blizzard",
+      "category": "ambience",
+      "kind": "loop",
+      "title": "Heavy Blizzard Wind Gust",
+      "author": "DRAGON-STUDIO",
+      "page": "https://pixabay.com/sound-effects/horror-heavy-blizzard-wind-gust-515271/",
+      "license": "Pixabay Content License"
+    },
+    {
+      "id": "crowd-murmur",
+      "name": "Crowd murmur",
+      "category": "ambience",
+      "kind": "loop",
+      "title": "Crowd Murmuring",
+      "author": "freesound_community",
+      "page": "https://pixabay.com/sound-effects/people-crowd-murmuring-60721/",
+      "license": "Pixabay Content License"
+    },
+    {
+      "id": "crypt",
+      "name": "Crypt",
+      "category": "ambience",
+      "kind": "loop",
+      "title": "Ancient Temple Horror Ambience - Dark Catacombs Atmosphere",
+      "author": "Coghezzi",
+      "page": "https://pixabay.com/sound-effects/film-special-effects-ncient-temple-horror-ambience-dark-catacombs-atmosphere-539976/",
+      "license": "Pixabay Content License"
+    },
+    {
+      "id": "harbour",
+      "name": "Harbour town",
+      "category": "ambience",
+      "kind": "loop",
+      "title": "Venitian Medieval-Harbour-crowd-sails-seaguls-TemplarSounds",
+      "author": "TemplarsSounds",
+      "page": "https://pixabay.com/sound-effects/nature-venitian-medieval-harbour-crowd-sails-seaguls-templarsounds-565620/",
+      "license": "Pixabay Content License"
+    },
+    {
+      "id": "jungle",
+      "name": "Jungle",
+      "category": "ambience",
+      "kind": "loop",
+      "title": "Nature sounds.tropical,jungle,birds",
+      "author": "Placidplace",
+      "page": "https://pixabay.com/sound-effects/nature-nature-soundstropicaljunglebirds-108380/",
+      "license": "Pixabay Content License"
+    },
+    {
+      "id": "market-crowd",
+      "name": "Market crowd",
+      "category": "ambience",
+      "kind": "loop",
+      "title": "Flea market ambience (Hungary)",
+      "author": "freesound_community",
+      "page": "https://pixabay.com/sound-effects/city-flea-market-ambience-hungary-19196/",
+      "license": "Pixabay Content License"
+    },
+    {
+      "id": "mine-shaft",
+      "name": "Mine shaft",
+      "category": "ambience",
+      "kind": "loop",
+      "title": "Old Mine Ambience",
+      "author": "JoelFazhari",
+      "page": "https://pixabay.com/sound-effects/film-special-effects-old-mine-ambience-200677/",
+      "license": "Pixabay Content License"
+    },
+    {
+      "id": "river",
+      "name": "River",
+      "category": "ambience",
+      "kind": "loop",
+      "title": "Water Stream River",
+      "author": "SoundReality",
+      "page": "https://pixabay.com/sound-effects/nature-water-stream-river-360596/",
+      "license": "Pixabay Content License"
+    },
+    {
+      "id": "sewer-drips",
+      "name": "Sewer drips",
+      "category": "ambience",
+      "kind": "loop",
+      "title": "Water Drips",
+      "author": "freesound_community",
+      "page": "https://pixabay.com/sound-effects/film-special-effects-water-drips-76848/",
+      "license": "Pixabay Content License"
+    },
+    {
+      "id": "ship-deck",
+      "name": "Ship at sea",
+      "category": "ambience",
+      "kind": "loop",
+      "title": "Ship Creaking-24b",
+      "author": "freesound_community",
+      "page": "https://pixabay.com/sound-effects/city-ship-creaking-24b-30119/",
+      "license": "Pixabay Content License"
+    },
+    {
+      "id": "swamp",
+      "name": "Swamp",
+      "category": "ambience",
+      "kind": "loop",
+      "title": "Frogs Croaking at Night",
+      "author": "DRAGON-STUDIO",
+      "page": "https://pixabay.com/sound-effects/nature-frogs-croaking-at-night-329855/",
+      "license": "Pixabay Content License"
+    },
+    {
+      "id": "temple-chant",
+      "name": "Temple chant",
+      "category": "ambience",
+      "kind": "loop",
+      "title": "Monk Chant Temple",
+      "author": "freesound_community",
+      "page": "https://pixabay.com/sound-effects/musical-monk-chant-temple-23120/",
+      "license": "Pixabay Content License"
+    },
+    {
+      "id": "axe-chop",
+      "name": "Axe chop",
+      "category": "combat",
+      "kind": "shot",
+      "title": "giant axe strike hitting solid wood (3)",
+      "author": "Yodguard",
+      "page": "https://pixabay.com/sound-effects/giant-axe-strike-hitting-solid-wood-3-450247/",
+      "license": "Pixabay Content License"
+    },
+    {
+      "id": "blade-whoosh",
+      "name": "Blade whoosh",
+      "category": "combat",
+      "kind": "shot",
+      "title": "Sword Slash and Swing",
+      "author": "DavidDumaisAudio",
+      "page": "https://pixabay.com/sound-effects/film-special-effects-sword-slash-and-swing-185432/",
+      "license": "Pixabay Content License"
+    },
+    {
+      "id": "bow-shot",
+      "name": "Bow shot",
+      "category": "combat",
+      "kind": "shot",
+      "title": "Bow Release (Bow and Arrow) 4",
+      "author": "freesound_community",
+      "page": "https://pixabay.com/sound-effects/film-special-effects-bow-release-bow-and-arrow-4-101936/",
+      "license": "Pixabay Content License"
+    },
+    {
+      "id": "chainmail",
+      "name": "Chainmail",
+      "category": "combat",
+      "kind": "shot",
+      "title": "Armor Impact from Sword",
+      "author": "DRAGON-STUDIO",
+      "page": "https://pixabay.com/sound-effects/film-special-effects-armor-impact-from-sword-393843/",
+      "license": "Pixabay Content License"
+    },
+    {
+      "id": "crossbow",
+      "name": "Crossbow",
+      "category": "combat",
+      "kind": "shot",
+      "title": "Crossbow Shot",
+      "author": "freesound_community",
+      "page": "https://pixabay.com/sound-effects/film-special-effects-crossbow-shot-85570/",
+      "license": "Pixabay Content License"
+    },
+    {
+      "id": "fireball",
+      "name": "Fireball",
+      "category": "combat",
+      "kind": "shot",
+      "title": "fire magic (5)",
+      "author": "Yodguard",
+      "page": "https://pixabay.com/sound-effects/film-special-effects-fire-magic-5-378639/",
+      "license": "Pixabay Content License"
+    },
+    {
+      "id": "healing-spell",
+      "name": "Healing spell",
+      "category": "combat",
+      "kind": "shot",
+      "title": "Fantasy Healing Spell Soft Magic Chime #2",
+      "author": "Vadim_Makes_Sound",
+      "page": "https://pixabay.com/sound-effects/film-special-effects-fantasy-healing-spell-soft-magic-chime-2-546564/",
+      "license": "Pixabay Content License"
+    },
+    {
+      "id": "ice-spell",
+      "name": "Ice spell",
+      "category": "combat",
+      "kind": "shot",
+      "title": "Ice Spell Impact",
+      "author": "DRAGON-STUDIO",
+      "page": "https://pixabay.com/sound-effects/technology-ice-spell-impact-448563/",
+      "license": "Pixabay Content License"
+    },
+    {
+      "id": "lightning-bolt",
+      "name": "Lightning bolt",
+      "category": "combat",
+      "kind": "shot",
+      "title": "Lightning Magic (3)",
+      "author": "Yodguard",
+      "page": "https://pixabay.com/sound-effects/film-special-effects-lightning-magic-3-378649/",
+      "license": "Pixabay Content License"
+    },
+    {
+      "id": "mace-hit",
+      "name": "Mace hit",
+      "category": "combat",
+      "kind": "shot",
+      "title": "Hard Heavy Impact",
+      "author": "DRAGON-STUDIO",
+      "page": "https://pixabay.com/sound-effects/film-special-effects-hard-heavy-impact-515256/",
+      "license": "Pixabay Content License"
+    },
+    {
+      "id": "summon",
+      "name": "Summon",
+      "category": "combat",
+      "kind": "shot",
+      "title": "Dark magic (6)",
+      "author": "Yodguard",
+      "page": "https://pixabay.com/sound-effects/film-special-effects-dark-magic-6-378652/",
+      "license": "Pixabay Content License"
+    },
+    {
+      "id": "sword-unsheath",
+      "name": "Sword unsheath",
+      "category": "combat",
+      "kind": "shot",
+      "title": "Sword Unsheathing",
+      "author": "DRAGON-STUDIO",
+      "page": "https://pixabay.com/sound-effects/film-special-effects-sword-unsheathing-393851/",
+      "license": "Pixabay Content License"
+    },
+    {
+      "id": "teleport",
+      "name": "Teleport",
+      "category": "combat",
+      "kind": "shot",
+      "title": "teleport game sound effect",
+      "author": "gargamel10",
+      "page": "https://pixabay.com/sound-effects/film-special-effects-teleport-game-sound-effect-379236/",
+      "license": "Pixabay Content License"
+    },
+    {
+      "id": "gold-purse",
+      "name": "Gold purse",
+      "category": "stingers",
+      "kind": "shot",
+      "title": "Coin Bag Pickup Drop",
+      "author": "freesound_community",
+      "page": "https://pixabay.com/sound-effects/film-special-effects-coin-bag-pickup-drop-94617/",
+      "license": "Pixabay Content License"
+    },
+    {
+      "id": "gong",
+      "name": "Gong",
+      "category": "stingers",
+      "kind": "shot",
+      "title": "gong sound",
+      "author": "izafi_",
+      "page": "https://pixabay.com/sound-effects/film-special-effects-gong-sound-419930/",
+      "license": "Pixabay Content License"
+    },
+    {
+      "id": "key-jingle",
+      "name": "Keys",
+      "category": "stingers",
+      "kind": "shot",
+      "title": "Keys jingle light",
+      "author": "freesound_community",
+      "page": "https://pixabay.com/sound-effects/film-special-effects-keys-jingle-light-98231/",
+      "license": "Pixabay Content License"
+    },
+    {
+      "id": "level-up",
+      "name": "Level up",
+      "category": "stingers",
+      "kind": "shot",
+      "title": "Level Up 05",
+      "author": "Universfield",
+      "page": "https://pixabay.com/sound-effects/film-special-effects-level-up-05-326133/",
+      "license": "Pixabay Content License"
+    },
+    {
+      "id": "lockpick",
+      "name": "Lockpick",
+      "category": "stingers",
+      "kind": "shot",
+      "title": "Unlock lock unlock door inside",
+      "author": "freesound_community",
+      "page": "https://pixabay.com/sound-effects/household-unlock-lock-unlock-door-inside-47663/",
+      "license": "Pixabay Content License"
+    },
+    {
+      "id": "magic-chime",
+      "name": "Magic chime",
+      "category": "stingers",
+      "kind": "shot",
+      "title": "Magic Spell 02",
+      "author": "Universfield",
+      "page": "https://pixabay.com/sound-effects/film-special-effects-magic-spell-02-250240/",
+      "license": "Pixabay Content License"
+    },
+    {
+      "id": "page-turn",
+      "name": "Page turn",
+      "category": "stingers",
+      "kind": "shot",
+      "title": "Flipping Book Page",
+      "author": "DRAGON-STUDIO",
+      "page": "https://pixabay.com/sound-effects/film-special-effects-flipping-book-page-499646/",
+      "license": "Pixabay Content License"
+    },
+    {
+      "id": "potion-drink",
+      "name": "Potion drink",
+      "category": "stingers",
+      "kind": "shot",
+      "title": "Potion Drink (3)",
+      "author": "Yodguard",
+      "page": "https://pixabay.com/sound-effects/film-special-effects-potion-drink-3-540167/",
+      "license": "Pixabay Content License"
+    },
+    {
+      "id": "quest-fail",
+      "name": "Quest fail",
+      "category": "stingers",
+      "kind": "shot",
+      "title": "Marimba Game Over",
+      "author": "Universfield",
+      "page": "https://pixabay.com/sound-effects/film-special-effects-marimba-game-over-250960/",
+      "license": "Pixabay Content License"
+    },
+    {
+      "id": "quill-writing",
+      "name": "Quill writing",
+      "category": "stingers",
+      "kind": "shot",
+      "title": "Writing on paper",
+      "author": "Kuzu420",
+      "page": "https://pixabay.com/sound-effects/film-special-effects-writing-on-paper-263222/",
+      "license": "Pixabay Content License"
+    },
+    {
+      "id": "torch-ignite",
+      "name": "Torch whoosh",
+      "category": "stingers",
+      "kind": "shot",
+      "title": "Fire Torch Whoosh 1",
+      "author": "floraphonic",
+      "page": "https://pixabay.com/sound-effects/film-special-effects-fire-torch-whoosh-1-186585/",
+      "license": "Pixabay Content License"
+    },
+    {
+      "id": "bat-wings",
+      "name": "Bat wings",
+      "category": "creatures",
+      "kind": "shot",
+      "title": "Dragon Wings Flapping",
+      "author": "DRAGON-STUDIO",
+      "page": "https://pixabay.com/sound-effects/film-special-effects-dragon-wings-flapping-478385/",
+      "license": "Pixabay Content License"
+    },
+    {
+      "id": "eagle-cry",
+      "name": "Eagle cry",
+      "category": "creatures",
+      "kind": "shot",
+      "title": "Hawk Call Sound Effect / Hawk Cry",
+      "author": "DRAGON-STUDIO",
+      "page": "https://pixabay.com/sound-effects/nature-hawk-call-sound-effect-hawk-cry-364472/",
+      "license": "Pixabay Content License"
+    },
+    {
+      "id": "ghost-wail",
+      "name": "Ghost wail",
+      "category": "creatures",
+      "kind": "shot",
+      "title": "A Long Mournful Wail",
+      "author": "AlesiaDavina",
+      "page": "https://pixabay.com/sound-effects/horror-a-long-mournful-wail-470743/",
+      "license": "Pixabay Content License"
+    },
+    {
+      "id": "giant-steps",
+      "name": "Giant footsteps",
+      "category": "creatures",
+      "kind": "shot",
+      "title": "Monster Heavy Footsteps",
+      "author": "TanwerAman",
+      "page": "https://pixabay.com/sound-effects/horror-monster-heavy-footsteps-321629/",
+      "license": "Pixabay Content License"
+    },
+    {
+      "id": "goblin",
+      "name": "Goblin",
+      "category": "creatures",
+      "kind": "shot",
+      "title": "Monster Goblin Voice - Excited Enemy Spotted!",
+      "author": "PhatPhrogStudio",
+      "page": "https://pixabay.com/sound-effects/horror-monster-goblin-voice-excited-enemy-spotted-519428/",
+      "license": "Pixabay Content License"
+    },
+    {
+      "id": "horse-gallop",
+      "name": "Horse gallop",
+      "category": "creatures",
+      "kind": "shot",
+      "title": "Horse Galloping Nearby (8D)",
+      "author": "DRAGON-STUDIO",
+      "page": "https://pixabay.com/sound-effects/nature-horse-galloping-nearby-8d-515255/",
+      "license": "Pixabay Content License"
+    },
+    {
+      "id": "horse-neigh",
+      "name": "Horse neigh",
+      "category": "creatures",
+      "kind": "shot",
+      "title": "Horse Neigh",
+      "author": "DRAGON-STUDIO",
+      "page": "https://pixabay.com/sound-effects/nature-horse-neigh-515279/",
+      "license": "Pixabay Content License"
+    },
+    {
+      "id": "orc-grunt",
+      "name": "Orc grunt",
+      "category": "creatures",
+      "kind": "shot",
+      "title": "GRUNT 1",
+      "author": "freesound_community",
+      "page": "https://pixabay.com/sound-effects/people-grunt-1-85280/",
+      "license": "Pixabay Content License"
+    },
+    {
+      "id": "snake-hiss",
+      "name": "Snake hiss",
+      "category": "creatures",
+      "kind": "shot",
+      "title": "Snake Hiss",
+      "author": "freesound_community",
+      "page": "https://pixabay.com/sound-effects/film-special-effects-snake-hiss-95241/",
+      "license": "Pixabay Content License"
+    },
+    {
+      "id": "zombie",
+      "name": "Zombie",
+      "category": "creatures",
+      "kind": "shot",
+      "title": "Zombie Sound 2",
+      "author": "DRAGON-STUDIO",
+      "page": "https://pixabay.com/sound-effects/horror-zombie-sound-2-357976/",
+      "license": "Pixabay Content License"
+    },
+    {
+      "id": "battle-music",
+      "name": "Battle music",
+      "category": "music",
+      "kind": "loop",
+      "title": "Epic Planet (Epic Action Cinematic Trailer Short Ver.3)",
+      "author": "AudioAtlant",
+      "page": "https://pixabay.com/sound-effects/musical-epic-planet-epic-action-cinematic-trailer-short-ver3-549085/",
+      "license": "Pixabay Content License"
+    },
+    {
+      "id": "harp-theme",
+      "name": "Harp theme",
+      "category": "music",
+      "kind": "loop",
+      "title": "Remembrance Harp",
+      "author": "freesound_community",
+      "page": "https://pixabay.com/sound-effects/musical-remembrance-harp-72958/",
+      "license": "Pixabay Content License"
+    },
+    {
+      "id": "sad-theme",
+      "name": "Sad theme",
+      "category": "music",
+      "kind": "loop",
+      "title": "Emotional Pad",
+      "author": "lucadialessandro",
+      "page": "https://pixabay.com/sound-effects/musical-emotional-pad-307950/",
+      "license": "Pixabay Content License"
+    },
+    {
+      "id": "lute-tavern",
+      "name": "Tavern lute",
+      "category": "music",
+      "kind": "loop",
+      "title": "Banners On The High Citadel (15 sec stinger)",
+      "author": "kaazoom",
+      "page": "https://pixabay.com/sound-effects/musical-banners-on-the-high-citadel-15-sec-stinger-572751/",
+      "license": "Pixabay Content License"
+    }
+  ]
+}
