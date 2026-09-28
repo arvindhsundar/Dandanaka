@@ -1,9 +1,9 @@
-const VERSION = 'v2';
+const VERSION = 'v3';
 const SHELL = `shell-${VERSION}`;
 const SOUNDS = 'sounds';
 // The app may be mounted under a path (e.g. /soundboard/); the registration scope tells us where.
 const BASE = new URL(self.registration.scope).pathname;
-const PRECACHE = ['', 'app.js', 'audio.js', 'sync.js', 'styles.css', 'icon.svg', 'manifest.webmanifest', 'sounds/manifest.json'].map((p) => BASE + p);
+const PRECACHE = ['', 'app.js', 'audio.js', 'sync.js', 'tour.js', 'styles.css', 'icon.svg', 'manifest.webmanifest', 'sounds/manifest.json'].map((p) => BASE + p);
 
 self.addEventListener('install', (e) => {
   e.waitUntil(caches.open(SHELL).then((c) => c.addAll(PRECACHE)).then(() => self.skipWaiting()));

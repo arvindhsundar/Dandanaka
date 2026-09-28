@@ -87,6 +87,11 @@ the GM's board state wins.
   listener, per-loop and master volume propagate, late joiner picks up a running loop, stop-all
   clears everyone, GM reload adopts server state, solo board works, service worker activates,
   zero same-origin console or request errors.
+- First-time guided tour (2026-09-28, `public/tour.js`): short A2-English steps on the home
+  screen, the GM board and the listener view. Runs once per device per screen (localStorage
+  `tour:<screen>:done`); the `?` button replays it. Steps whose target is missing are skipped,
+  so the solo board drops "Share link" and "Who is listening". `node test/tour.e2e.mjs`
+  checks it headless at phone and laptop size: 27/27.
 
 ## Not verified / known limits
 

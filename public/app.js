@@ -1,5 +1,6 @@
 import { AudioEngine } from './audio.js';
 import { ClockSync } from './sync.js';
+import { maybeStartTour, startTour } from './tour.js';
 
 // The server injects <base href> so the app can be mounted at / or under a prefix like /soundboard/.
 const BASE = new URL(document.baseURI).pathname;
@@ -48,11 +49,14 @@ function renderHome() {
       <h1>Dandanaka</h1>
       <p class="sub muted">A soundboard for the table. Start a session on this device, share the link, and every player hears the same thing at the same time.</p>
       <button class="primary" id="start">Start a session</button>
-      <div class="row"><input type="text" id="code" placeholder="or enter a room code: fox-moon-oak" autocapitalize="none" autocorrect="off"><button id="join">Join</button></div>
-      <p class="muted"><a href="${BASE}?solo=1">Solo board</a> (no room, this device only)</p>
+      <div class="row" id="joinrow"><input type="text" id="code" placeholder="or enter a room code: fox-moon-oak" autocapitalize="none" autocorrect="off"><button id="join">Join</button></div>
+      <p class="muted"><a id="solo" href="${BASE}?solo=1">Solo board</a> (no room, this device only)</p>
       <p id="err" class="err"></p>
       <p class="muted small">A <a href="https://puttheplayerfirst.com/" rel="noopener">Put The Player First</a> tool for game masters. Free, no account.</p>
+      <button class="ghost help" id="help" aria-label="Show the tour" title="Show the tour">?</button>
     </div>`;
+  $('#help').onclick = () => startTour('home');
+  maybeStartTour('home');
   $('#start').onclick = async () => {
     $('#start').disabled = true; $('#err').textContent = '';
     try {
@@ -201,6 +205,7 @@ function renderBoard() {
       <span class="spacer"></span>
       <label class="master">Master <input type="range" id="master" min="0" max="1.5" step="0.01" value="${S.roomMaster}"></label>
       <button class="stopall" id="stopall">Stop all</button>
+      <button class="ghost help" id="help" aria-label="Show the tour" title="Show the tour">?</button>
     </div>
     <div class="banner" id="banner" hidden>Audio paused by the browser. Tap to resume.</div>
     <div class="board">
@@ -226,7 +231,9 @@ function renderBoard() {
     const vol = pad.querySelector('input');
     if (vol) vol.addEventListener('input', () => send({ t: 'volume', sound: id, volume: Number(vol.value) }));
   }
+  $('#help').onclick = () => startTour('board');
   updateStatus(); refreshPads();
+  maybeStartTour('board');
 }
 
 function padHtml(s) {
@@ -266,6 +273,8 @@ function renderListener() {
     <div class="top">
       <span class="code">${esc(S.code)}</span>
       <span class="status"><span class="dot" id="dot"></span><span id="stat"></span></span>
+      <span class="spacer"></span>
+      <button class="ghost help" id="help" aria-label="Show the tour" title="Show the tour">?</button>
     </div>
     <div class="banner" id="banner" hidden>Audio paused by the browser. Tap to resume.</div>
     <div class="listen">
@@ -274,13 +283,15 @@ function renderListener() {
         <input type="range" id="lvol" min="0" max="1" step="0.01" value="${S.localVolume}">
         <p><button id="mute" class="ghost">Mute</button></p>
       </div>
-      <p class="muted">Keep this tab in the foreground. Phones stop playing web audio when the screen locks or the tab is hidden.</p>
+      <p class="muted" id="keepopen">Keep this tab in the foreground. Phones stop playing web audio when the screen locks or the tab is hidden.</p>
     </div>
     ${creditsHtml()}`;
   $('#lvol').oninput = (e) => { S.localVolume = Number(e.target.value); if (!S.muted) engine.setLocalVolume(S.localVolume); };
   $('#mute').onclick = () => { S.muted = !S.muted; engine.setLocalVolume(S.muted ? 0 : S.localVolume); $('#mute').textContent = S.muted ? 'Unmute' : 'Mute'; };
   $('#banner').onclick = () => engine.resume();
+  $('#help').onclick = () => startTour('listen');
   updateStatus(); updateNowPlaying();
+  maybeStartTour('listen');
 }
 
 function updateNowPlaying() {
